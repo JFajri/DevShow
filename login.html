@@ -104,19 +104,21 @@
 
                 <!-- Password -->
 
-                <div class="form-group">
-
-                    <label for="password">
-                        Password
-                    </label>
+                <div class="password-field">
 
                     <input
                         type="password"
                         id="password"
-                        name="password"
-                        placeholder="Enter your password"
-                        autocomplete="current-password"
+                        placeholder="Password"
                     >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        aria-label="Show password"
+                    >
+                        ◉
+                    </button>
 
                 </div>
 
@@ -206,6 +208,18 @@
 
     </main>
 
+    <div
+        class="toast"
+        id="toast"
+    >
+        <span class="toast-icon">
+            ✓
+        </span>
+
+        <span class="toast-message">
+            Action completed
+        </span>
+    </div>
 
     <script src="js/script.js"></script>
 

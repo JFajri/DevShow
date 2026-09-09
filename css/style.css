@@ -3962,3 +3962,274 @@ p {
     }
 
 }
+
+/* =========================
+   MOBILE MENU
+   ========================= */
+
+@media (max-width: 767px) {
+
+    .nav-links.mobile-open {
+
+        position: absolute;
+
+        top: 68px;
+
+        left: 12px;
+        right: 12px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 4px;
+
+        padding: 10px;
+
+        border:
+            1px solid var(--color-border);
+
+        border-radius: 14px;
+
+        background:
+            rgba(16, 16, 23, 0.94);
+
+        backdrop-filter: blur(20px);
+
+        box-shadow:
+            0 20px 50px
+            rgba(0, 0, 0, 0.3);
+    }
+
+
+    [data-theme="light"]
+    .nav-links.mobile-open {
+
+        background:
+            rgba(255, 255, 255, 0.96);
+    }
+
+
+    .nav-links.mobile-open
+    .nav-link {
+
+        display: block;
+
+        padding: 12px;
+
+        border-radius: 8px;
+    }
+
+
+    .nav-links.mobile-open
+    .nav-link:hover {
+
+        background:
+            rgba(139, 92, 246, 0.08);
+    }
+
+
+    .nav-links.mobile-open
+    .nav-link.active::after {
+
+        display: none;
+    }
+
+
+    .nav-links.mobile-open
+    .nav-link.active {
+
+        background:
+            rgba(139, 92, 246, 0.1);
+    }
+
+}
+
+.menu-toggle.open span:first-child {
+    transform:
+        translateY(3.25px)
+        rotate(45deg);
+}
+
+.menu-toggle.open span:last-child {
+    transform:
+        translateY(-3.25px)
+        rotate(-45deg);
+}
+/* =========================
+   PASSWORD TOGGLE
+   ========================= */
+
+.password-field {
+    position: relative;
+}
+
+.password-field input {
+    width: 100%;
+
+    padding-right: 45px;
+}
+
+.password-toggle {
+    position: absolute;
+
+    top: 50%;
+    right: 12px;
+
+    transform:
+        translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color:
+        var(--color-text-muted);
+
+    cursor: pointer;
+
+    font-size: 0.8rem;
+}
+
+.password-toggle:hover {
+    color:
+        var(--color-text-primary);
+}
+
+/* =========================
+   TOAST
+   ========================= */
+
+.toast {
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 24px;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 14px;
+
+    border:
+        1px solid var(--color-border);
+
+    border-radius: 10px;
+
+    background:
+        rgba(16, 16, 23, 0.94);
+
+    backdrop-filter: blur(16px);
+
+    color:
+        var(--color-text-primary);
+
+    font-size: 0.72rem;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.3);
+
+    transform:
+        translate(-50%, 20px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 200ms ease,
+        transform 200ms ease;
+}
+
+[data-theme="light"] .toast {
+    background:
+        rgba(255, 255, 255, 0.95);
+}
+
+.toast.show {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+.toast-icon {
+
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(139, 92, 246, 0.15);
+
+    color:
+        var(--color-purple);
+
+    font-size: 0.65rem;
+}
+/* =========================
+   LIKE BUTTON
+   ========================= */
+
+.project-like {
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid var(--color-border);
+
+    border-radius: 9px;
+
+    background:
+        var(--color-surface);
+
+    color:
+        var(--color-text-secondary);
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    transition:
+        transform var(--transition-fast),
+        color var(--transition-fast),
+        background var(--transition-fast);
+}
+
+.project-like:hover {
+
+    transform:
+        translateY(-2px);
+
+    color:
+        var(--color-purple);
+}
+
+.project-like.liked {
+
+    color:
+        var(--color-purple);
+
+    background:
+        rgba(139, 92, 246, 0.1);
+}
