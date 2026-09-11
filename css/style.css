@@ -817,6 +817,11 @@ p {
     cursor: pointer;
 }
 
+.project-card:active {
+    transform:
+        scale(0.99);
+}
+
 .project-card:hover {
     transform: translateY(-5px);
 
@@ -4317,4 +4322,511 @@ p {
 
     background:
         rgba(139, 92, 246, 0.1);
+}
+
+/* ========================================
+   STEP 12
+   FINAL RESPONSIVE POLISH
+   ======================================== */
+
+
+/* =========================
+   GLOBAL
+   ========================= */
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+    background:
+        rgba(139, 92, 246, 0.25);
+
+    color:
+        var(--color-text-primary);
+}
+
+/* =========================
+   RESPONSIVE CONTAINERS
+   ========================= */
+
+.container {
+    width: 100%;
+
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+
+    .container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+}
+@media (min-width: 1200px) {
+
+    .container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+}
+
+/* =========================
+   TYPOGRAPHY POLISH
+   ========================= */
+
+h1,
+h2,
+h3 {
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+@media (min-width: 768px) {
+
+    h2 {
+        letter-spacing: -0.045em;
+    }
+
+}
+
+/* =========================
+   NAVBAR MOBILE POLISH
+   ========================= */
+
+@media (max-width: 767px) {
+
+    .navbar-container {
+        min-height: 64px;
+
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .brand-name {
+        font-size: 1rem;
+    }
+
+    .brand-symbol {
+        width: 30px;
+        height: 30px;
+    }
+
+    .nav-actions {
+        gap: 7px;
+    }
+
+    .theme-toggle,
+    .menu-toggle {
+        width: 36px;
+        height: 36px;
+    }
+
+}
+
+/* =========================
+   HERO MOBILE
+   ========================= */
+
+@media (max-width: 767px) {
+
+    .hero {
+        min-height: calc(100svh - 64px);
+
+        padding:
+            80px 20px
+            70px;
+
+    }
+
+    .hero h1 {
+        font-size:
+            clamp(
+                2.8rem,
+                13vw,
+                4.5rem
+            );
+
+        line-height: 0.95;
+
+        letter-spacing: -0.065em;
+    }
+
+    .hero p {
+        max-width: 460px;
+
+        margin-top: 20px;
+
+        font-size: 0.85rem;
+
+        line-height: 1.7;
+    }
+
+}
+
+/* =========================
+   PROJECT GALLERY
+   ========================= */
+
+.project-grid {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .project-card {
+        min-width: 0;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .project-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 16px;
+    }
+
+}
+
+@media (min-width: 1100px) {
+
+    .project-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+}
+
+/* =========================
+   DEVELOPER PROFILE
+   ========================= */
+
+@media (max-width: 767px) {
+
+    .profile-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .profile-section h1 {
+        font-size:
+            clamp(
+                2.2rem,
+                10vw,
+                3.5rem
+            );
+    }
+
+    .profile-section p {
+        max-width: 100%;
+
+        font-size: 0.82rem;
+
+        line-height: 1.7;
+    }
+
+    .skills-list {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 7px;
+    }
+
+}
+
+/* =========================
+   PROJECT DETAIL MOBILE
+   ========================= */
+
+@media (max-width: 767px) {
+
+    .project-detail {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .project-detail h1 {
+        font-size:
+            clamp(
+                2.3rem,
+                11vw,
+                4rem
+            );
+
+        line-height: 1;
+    }
+
+    .project-detail p {
+        font-size: 0.82rem;
+
+        line-height: 1.7;
+    }
+
+    .project-actions {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .project-actions a,
+    .project-actions button {
+        width: 100%;
+    }
+
+}
+
+/* =========================
+   DASHBOARD MOBILE POLISH
+   ========================= */
+
+@media (max-width: 767px) {
+
+    .dashboard-navbar {
+        height: 64px;
+
+        padding:
+            0 16px;
+    }
+
+    .dashboard-layout {
+        min-height:
+            calc(100svh - 64px);
+    }
+
+    .dashboard-main {
+        padding:
+            30px 16px 70px;
+    }
+
+    .dashboard-header {
+        margin-bottom: 26px;
+    }
+
+    .dashboard-header h1 {
+        font-size:
+            clamp(
+                2rem,
+                10vw,
+                2.8rem
+            );
+    }
+
+    .dashboard-header p {
+        font-size: 0.76rem;
+    }
+
+    .dashboard-create-button {
+        width: 100%;
+    }
+
+    .dashboard-stats {
+        gap: 8px;
+    }
+
+    .dashboard-stat-card {
+        min-height: 110px;
+
+        padding: 15px;
+    }
+
+    .dashboard-stat-card strong {
+        font-size: 1.35rem;
+    }
+
+    .dashboard-content-grid {
+        gap: 28px;
+    }
+
+}
+
+/* =========================
+   ADMIN MOBILE POLISH
+   ========================= */
+
+@media (max-width: 767px) {
+
+    .admin-navbar {
+        height: 64px;
+
+        padding:
+            0 16px;
+    }
+
+    .admin-layout {
+        min-height:
+            calc(100svh - 64px);
+    }
+
+    .admin-main {
+        padding:
+            30px 16px 70px;
+    }
+
+    .admin-header {
+        margin-bottom: 26px;
+    }
+
+    .admin-header h1 {
+        font-size:
+            clamp(
+                2rem,
+                10vw,
+                2.8rem
+            );
+    }
+
+    .admin-stats {
+        gap: 8px;
+    }
+
+    .admin-stat-card {
+        min-height: 115px;
+
+        padding: 15px;
+    }
+
+    .admin-stat-card strong {
+        font-size: 1.3rem;
+    }
+
+    .admin-panel-card {
+        padding: 16px;
+    }
+
+    .admin-project-row {
+        gap: 9px;
+    }
+
+    .admin-status {
+        padding:
+            4px 6px;
+    }
+
+}
+
+/* =========================
+   OVERFLOW PROTECTION
+   ========================= */
+
+.dashboard-project-preview,
+.project-preview,
+.project-image,
+.project-card,
+.admin-panel-card,
+.dashboard-stat-card {
+    max-width: 100%;
+}
+
+pre,
+code {
+    max-width: 100%;
+}
+
+pre {
+    overflow-x: auto;
+}
+
+/* =========================
+   WIDE DESKTOP
+   ========================= */
+
+@media (min-width: 1400px) {
+
+    .navbar-container {
+        max-width: 1320px;
+    }
+
+    .dashboard-main,
+    .admin-main {
+        max-width: 1500px;
+    }
+
+}
+
+/* =========================
+   FOCUS
+   ========================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+
+    outline:
+        2px solid var(--color-purple);
+
+    outline-offset:
+        3px;
+}
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior: auto !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+    }
+
 }
