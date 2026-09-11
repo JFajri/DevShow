@@ -241,3 +241,38 @@ likeButtons.forEach((button) => {
     );
 
 });
+
+/* =========================
+   PROJECT CARD
+   ========================= */
+
+const projectCards =
+    document.querySelectorAll(".project-card");
+
+projectCards.forEach((card) => {
+
+    card.addEventListener("click", function () {
+
+        // MOBILE
+        if (window.innerWidth <= 767) {
+
+            // Tap pertama → tampilkan View Project
+            if (!this.classList.contains("is-active")) {
+
+                this.classList.add("is-active");
+
+                return;
+            }
+
+            // Tap kedua → buka project
+            window.location.href = "project.html";
+
+            return;
+        }
+
+        // DESKTOP
+        window.location.href = "project.html";
+
+    });
+
+});
